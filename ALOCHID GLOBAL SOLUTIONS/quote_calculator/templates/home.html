@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHLOCHID GLOBAL SOLUTIONS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="{{ url_for('index') }}">Request a Quote</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Reliable Agri Import & Export Services</h1>
+            <p>Your trusted partner in global agricultural trade.</p>
+            <a href="{{ url_for('index') }}" class="cta">Request a Quote</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At AHLOCHID GLOBAL SOLUTIONS, we specialize in the global trade of high-quality agricultural products. With years of experience, we ensure efficient and reliable service for all your import and export needs.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-item">
+            <h3>Import Services</h3>
+            <p>We offer comprehensive import services for a variety of agricultural products, ensuring timely delivery and quality control.</p>
+        </div>
+        <div class="service-item">
+            <h3>Export Services</h3>
+            <p>Our export services are designed to meet the needs of our global clients, providing a seamless and efficient process for exporting agricultural goods.</p>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Featured Products</h2>
+        <div class="product-item">
+            <img class="product-image" src="{{ url_for('static', filename='product1.jpg') }}" alt="Wheat">
+            <h3>Wheat</h3>
+            <p>High-quality wheat sourced from the best farms.</p>
+        </div>
+        <div class="product-item">
+            <img class="product-image" src="{{ url_for('static', filename='product2.jpg') }}" alt="Corn">
+            <h3>Corn</h3>
+            <p>Premium corn perfect for various uses.</p>
+        </div>
+        <div class="product-item">
+            <img class="product-image" src="{{ url_for('static', filename='product3.jpg') }}" alt="Soybeans">
+            <h3>Soybeans</h3>
+            <p>Top-grade soybeans for all your needs.</p>
+        </div>
+    </section>
+
+    <section id="quote">
+        <h2>Request a Quote</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p>Email: info@agriimportexport.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <p>Address: 123 Agriculture St, Farmville, USA</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Latest News</h2>
+        <article>
+            <h3>Global Agricultural Trends</h3>
+            <p>Stay updated with the latest trends and insights in the global agricultural market.</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <h3>Exporting Tips</h3>
+            <p>Learn valuable tips and best practices for exporting agricultural products.</p>
+            <a href="#">Read More</a>
+        </article>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Agri Import & Export. All rights reserved.</p>
+            <ul class="social-media">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

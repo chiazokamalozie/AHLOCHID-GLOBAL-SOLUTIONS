@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Estimation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('home') }}">About Us</a></li>
+                <li><a href="{{ url_for('home') }}">Services</a></li>
+                <li><a href="{{ url_for('home') }}">Products</a></li>
+                <li><a href="{{ url_for('index') }}">Request a Quote</a></li>
+                <li><a href="{{ url_for('home') }}">Contact</a></li>
+                <li><a href="{{ url_for('home') }}">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>AHLOCHID GLOBAL SOLUTIONS</h1>
+        <form action="/calculate" method="post">
+            <label for="purchase_price">Purchase Price per Unit (₦):</label>
+            <input type="number" step="0.01" id="purchase_price" name="purchase_price" required><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required><br>
+
+            <label for="freight_costs">Freight Costs (₦):</label>
+            <input type="number" step="0.01" id="freight_costs" name="freight_costs" required><br>
+
+            <label for="insurance">Insurance (₦):</label>
+            <input type="number" step="0.01" id="insurance" name="insurance" required><br>
+
+            <label for="handling_fees">Handling Fees (₦):</label>
+            <input type="number" step="0.01" id="handling_fees" name="handling_fees" required><br>
+
+            <label for="import_duties">Import Duties and Taxes (₦):</label>
+            <input type="number" step="0.01" id="import_duties" name="import_duties" required><br>
+
+            <label for="customs_fees">Customs Brokerage Fees (₦):</label>
+            <input type="number" step="0.01" id="customs_fees" name="customs_fees" required><br>
+
+            <label for="transportation">Domestic Transportation (₦):</label>
+            <input type="number" step="0.01" id="transportation" name="transportation" required><br>
+
+            <label for="storage">Storage (₦):</label>
+            <input type="number" step="0.01" id="storage" name="storage" required><br>
+
+            <label for="packaging">Packaging (₦):</label>
+            <input type="number" step="0.01" id="packaging" name="packaging" required><br>
+
+            <label for="documentation">Documentation (₦):</label>
+            <input type="number" step="0.01" id="documentation" name="documentation" required><br>
+
+            <label for="bank_charges">Bank Charges (₦):</label>
+            <input type="number" step="0.01" id="bank_charges" name="bank_charges" required><br>
+
+            <label for="profit_margin">Desired Profit Margin (%):</label>
+            <input type="number" step="0.01" id="profit_margin" name="profit_margin" required><br><br>
+
+            <input type="submit" value="Calculate">
+        </form>
+
+        {% if total_landed_cost is not none %}
+            <div class="results">
+                <h2>Calculation Results:</h2>
+                <p>Total Landed Cost (₦): {{ total_landed_cost }}</p>
+                <p>Profit Margin (₦): {{ profit_margin }}</p>
+                <p>Selling Price (₦): {{ selling_price }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
